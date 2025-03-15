@@ -2,15 +2,26 @@
 from flask import Flask, render_template, session, redirect
 # On importe os
 import os
+# On import le module random
+import random
 # On crée une instance de Flask stocké dans la variable app
 app = Flask("My Première App Web avec Flask")
-# On importe les questions
-from questions import questions
-# On importe les resultats
-from resultats import resultats
+
 
 # On définit notre clef secrète pour la création des cookies
 app.secret_key = os.urandom(24)
+
+# On définit notre route de page d'accueil
+@app.route('/')
+def initialisation():
+    # On crée une liste de mots 
+    liste_de_mots = ["magic", "souris", "dns","déni","application","router", "clavier","fonction","trace","ravin"]
+    # On choisit aléatoirement un mot de cette liste
+    mot_a_deviner = random.choice(liste_de_mots)
+    vies = 6 
+    print(mot_a_deviner)
+
+    return "Test"
 
 
 
