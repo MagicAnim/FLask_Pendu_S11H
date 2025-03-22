@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title> 𝒫endu </title>
+
+</head>
+
+<body>
+
+    <header>
+        <h1 class="text-center text-white font-semibold text-6xl bg-yellow-300  py-2"> Jeu du Pendu </h1>
+    </header>
+
+
+
+    <main class="mt-6">
+
+
+        <p class="text-center text-4xl"> Trouve le mot à deviner en proposant des lettres ou directement la réponse </p>
+
+        <p class="text-center text-6xl"> {{etat_du_jeu.mot_a_afficher}} </p>
+
+        <form method="POST" action="/deviner" autocomplete="off" >
+            <div class="flex justify-center m-8">
+                <input type="text" name="entree" placeholder="Propose une réponse" class="border-2 border-yellow-300 rounded-lg m-8 text-4xl">
+            </div>
+
+            <div class="flex justify-center m-8">
+                <button class="bg-yellow-300 hover:bg-yellow-400 p-4 rounded-lg animate-bounce text-4xl" type="submit" >Valider</button>
+            </div>
+        </form>
+
+    </main>
+
+
+
+
+    <footer class="w-full fixed bottom-0">
+        <p class="text-center text-white font-semiboldtext-2xl bg-yellow-300"> Copyright @ MagicMakers </p>
+    </footer>
+</body>
+
+</html>
